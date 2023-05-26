@@ -1,0 +1,10 @@
+Grammh 1 Kariolhs
+Grammh 2 Malakas
+
+with open('Text.txt', 'r') as f:
+    size_to_read = 5
+
+    f_contents = f.read(size_to_read)
+    while len(f_contents) > 0:
+        print(f_contents, end='')
+        f_contents = f.read(size_to_read)

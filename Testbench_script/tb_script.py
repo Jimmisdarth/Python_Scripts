@@ -1,9 +1,11 @@
 #################################################################################
 #################################################################################
 #
-# Diabazei ena arxeio .vhd me onoma entity: entity_name kai dhmiourgei ena
-# testbench gia to sygkekrimeno entity me ola ta ejjwterika tou shmata dhlomena
+# Diabazei ena arxeio me onoma entity_name.vhd kai dhmiourgei ena testbench
+# gia to sygkekrimeno entity me ola ta ejjwterika tou shmata dhlomena
 # kai ena process pou trexei gia 100ns.
+#
+# Thewrei oti to roloi einai dilomeno ws to shma CLK
 
 entity_name = "UART"
 tb_entity_name = entity_name + "_tb"    # entity_tb

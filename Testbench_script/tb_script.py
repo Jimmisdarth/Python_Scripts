@@ -7,7 +7,7 @@
 #
 # Thewrei oti to roloi einai dilomeno ws to shma CLK
 
-entity_name = "UART"
+entity_name = "ALU"
 tb_entity_name = entity_name + "_tb"    # entity_tb
 
 design_file_name = entity_name + '.vhd'
@@ -78,14 +78,17 @@ with open(design_file_name, 'r') as read_file:
         ## Internal Signals
         write_file.write("\t-- Internal Inputs to UUT\n")
 
+        if "CLK" not in input_signals:                               # Elegxoume an yparxei roloi ws top level signal sto entity
+            write_file.write("\tsignal CLK : STD_LOGIC := '0';\n")   # an den yparxei dhmiourgoume ena gia to process
+
         for signal in input_signals:
             signal = signal.replace("in", "")   # Afairoume to in apo ta shmata
             signal = signal.replace("\t", "")   # Afairoume ola ta tabs pou diabasthkan
 
-            if "STD_LOGIC" in signal:
-                signal = signal.replace(";", " := '0';")
-            else:
+            if "STD_LOGIC_VECTOR" in signal:
                 signal = signal.replace(";", " := (others => '0');")
+            else:
+                signal = signal.replace(";", " := '0';")
             
             write_file.write("\t" + "signal " + signal)
 

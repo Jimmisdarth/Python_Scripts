@@ -1,0 +1,66 @@
+	Subtractor_S0x: Subtractor
+		generic map(
+			WIDTH => WIDTH
+				)
+		port map(
+			A => Pixels_in.Pixel_02,	-- A - B
+		    B => Pixels_in.Pixel_00,
+
+			S => Stage1_Sums.S0x
+				);
+
+	Subtractor_S1x: Subtractor
+		generic map(
+			WIDTH => WIDTH
+				)
+		port map(
+			A => Pixels_in.Pixel_12,	-- A - B
+		    B => Pixels_in.Pixel_10,
+
+			S => Stage1_Sums.S1x
+				);
+
+	Subtractor_S2x: Subtractor
+		generic map(
+			WIDTH => WIDTH
+				)
+		port map(
+			A => Pixels_in.Pixel_22,	-- A - B
+		    B => Pixels_in.Pixel_20,
+
+			S => Stage1_Sums.S2x
+				);
+
+	Subtractor_S0y: Subtractor
+		generic map(
+			WIDTH => WIDTH
+				)
+		port map(
+			A => Pixels_in.Pixel_00,	-- A - B
+		    B => Pixels_in.Pixel_20,
+
+			S => Stage1_Sums.S0y
+				);
+
+	Subtractor_S1y: Subtractor
+		generic map(
+			WIDTH => WIDTH
+				)
+		port map(
+			A => Pixels_in.Pixel_01,	-- A - B
+		    B => Pixels_in.Pixel_21,
+
+			S => Stage1_Sums.S1y
+				);
+
+	Subtractor_S2y: Subtractor
+		generic map(
+			WIDTH => WIDTH
+				)
+		port map(
+			A => Pixels_in.Pixel_02,	-- A - B
+		    B => Pixels_in.Pixel_22,
+
+			S => Stage1_Sums.S2y
+				);
+

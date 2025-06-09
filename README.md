@@ -1,1 +1,1 @@
-Python scripts for sobel filter on images
+Python and VHDL testbench scripts for sobel filter on images
